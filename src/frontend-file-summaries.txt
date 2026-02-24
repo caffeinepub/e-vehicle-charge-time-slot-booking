@@ -1,0 +1,15 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup, defining routes for stations, booking, dashboard, and success pages with a shared Layout wrapper.",
+  "frontend/src/hooks/useQueries.ts": "Custom React Query hooks for all backend operations including fetching available slots, user bookings, booking slots, cancelling bookings, and adding stations.",
+  "frontend/src/components/Layout.tsx": "Application layout component with header navigation, eco-friendly branding with generated icon, authentication controls, and footer with attribution.",
+  "frontend/src/components/StationCard.tsx": "Reusable card component displaying charging station information including name, location, ports, hours, and available slots with booking CTA.",
+  "frontend/src/components/BookingCard.tsx": "Card component for displaying individual booking details with cancellation functionality and time-based restrictions.",
+  "frontend/src/components/TimeSlotPicker.tsx": "Interactive time slot selection component showing available 30-minute charging slots in a grid layout.",
+  "frontend/src/pages/StationsPage.tsx": "Main landing page with hero section using generated EV station image, displaying all charging stations with real-time availability and auto-initialization of demo stations.",
+  "frontend/src/pages/BookingPage.tsx": "Booking flow page integrating date picker, time slot picker, and booking confirmation with authentication check.",
+  "frontend/src/pages/DashboardPage.tsx": "User dashboard displaying upcoming and past bookings with authentication protection and booking management.",
+  "frontend/src/pages/BookingSuccessPage.tsx": "Confirmation page shown after successful booking with booking ID and navigation options.",
+  "frontend/src/index.css": "Global styles with OKLCH color system customized for eco-friendly green and electric blue theme with proper light/dark mode support.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending default theme with custom border radius and maintaining color token system.",
+  "frontend/src/main.tsx": "Application entry point with QueryClient, InternetIdentity, ThemeProvider, and Sonner toast notifications setup."
+}

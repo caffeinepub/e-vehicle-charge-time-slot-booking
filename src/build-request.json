@@ -1,0 +1,184 @@
+{
+  "kind": "build_request",
+  "title": "Create EV charging station time slot booking system",
+  "projectName": "EV Charge Slots",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a backend data model for charging stations with properties: station ID, station name, location, number of charging ports, and operating hours",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Charging station records can be created and retrieved",
+        "Each station has a unique identifier",
+        "Station includes location and port capacity information"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement a time slot booking system where users can reserve charging slots in 30-minute increments",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Time slots are bookable in 30-minute intervals",
+        "Each booking is associated with a specific station and port",
+        "Bookings include user identifier, station ID, port number, start time, and end time",
+        "Prevent double-booking of the same port at overlapping times"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create backend functions to check available time slots for a given station and date range",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can query available slots for a specific station",
+        "System returns only unbooked time slots",
+        "Availability check considers station operating hours"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Build a frontend interface to display a list of charging stations with their details and real-time availability",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Charging stations are displayed in a list or grid view",
+        "Each station shows name, location, and number of available ports",
+        "Interface updates to reflect current availability"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Implement a calendar or time picker interface for users to select their desired charging date and time slot",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can select a date from a calendar view",
+        "Available time slots are displayed for the selected date",
+        "Unavailable slots are visually distinguished from available ones",
+        "Users can select a time slot to proceed with booking"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Create a booking confirmation flow where users can review their selection and complete the reservation",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Booking summary displays station name, date, time slot, and port number",
+        "Users can confirm or cancel the booking before submission",
+        "Successful bookings show a confirmation message",
+        "Failed bookings display appropriate error messages"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Implement user authentication using Internet Identity to manage bookings per user",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can log in using Internet Identity",
+        "Bookings are associated with authenticated user principals",
+        "Users can only view and manage their own bookings"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Create a user dashboard showing all current and upcoming bookings for the logged-in user",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Dashboard displays user's active bookings chronologically",
+        "Each booking shows station name, date, time, and port number",
+        "Users can view booking details"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Add functionality for users to cancel their bookings at least 1 hour before the scheduled time",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can cancel bookings from their dashboard",
+        "Cancellations are only allowed if more than 1 hour remains before start time",
+        "Cancelled slots become immediately available for other users",
+        "System displays appropriate messages for cancellation attempts within the 1-hour window"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Design a modern, clean interface with a cohesive color scheme using green and electric blue accents to reflect the eco-friendly nature of electric vehicles, with clear typography and intuitive layouts for browsing stations and booking slots",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Color scheme consistently uses green and electric blue throughout the application",
+        "Typography is legible and hierarchy is clear",
+        "Layout facilitates easy navigation between station selection, time slot booking, and user dashboard",
+        "Design conveys an eco-friendly, modern aesthetic"
+      ]
+    }
+  ],
+  "constraints": [
+    "All backend logic must be implemented in a single Motoko actor",
+    "Use Internet Identity for authentication only",
+    "Time slots must be in 30-minute increments",
+    "Bookings can only be cancelled at least 1 hour before scheduled time"
+  ],
+  "nonGoals": [
+    "Payment processing integration",
+    "Real-time charging status monitoring",
+    "Mobile app development",
+    "Integration with physical charging station hardware",
+    "Dynamic pricing based on demand",
+    "Multiple backend services or microservices architecture"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Electric vehicle charging station illustration with modern design (ev-station.dim_800x600.png)",
+      "Green energy icon representing eco-friendly charging (eco-icon.dim_128x128.png)"
+    ],
+    "edits": []
+  }
+}

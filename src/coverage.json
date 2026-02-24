@@ -1,0 +1,259 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-24T05:37:31.104Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 10,
+    "implemented": 7,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Create a backend data model for charging stations with properties: station ID, station name, location, number of charging ports, and operating hours",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-10",
+        "summary": "Design a modern, clean interface with a cohesive color scheme using green and electric blue accents to reflect the eco-friendly nature of electric vehicles, with clear typography and intuitive layouts for browsing stations and booking slots",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/components/Layout.tsx",
+          "frontend/public/assets/generated/ev-station.dim_800x600.png",
+          "frontend/public/assets/generated/eco-icon.dim_128x128.png",
+          "frontend/src/pages/StationsPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/components/Layout.tsx",
+          "frontend/public/assets/generated/ev-station.dim_800x600.png",
+          "frontend/public/assets/generated/eco-icon.dim_128x128.png",
+          "frontend/src/pages/StationsPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Implement a time slot booking system where users can reserve charging slots in 30-minute increments",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-3",
+        "summary": "Create backend functions to check available time slots for a given station and date range",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-4",
+        "summary": "Build a frontend interface to display a list of charging stations with their details and real-time availability",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/StationList.tsx",
+          "frontend/src/pages/StationsPage.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/StationsPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-5",
+        "summary": "Implement a calendar or time picker interface for users to select their desired charging date and time slot",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/TimeSlotPicker.tsx",
+          "frontend/src/components/DatePicker.tsx",
+          "frontend/src/pages/BookingPage.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/TimeSlotPicker.tsx",
+          "frontend/src/pages/BookingPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-6",
+        "summary": "Create a booking confirmation flow where users can review their selection and complete the reservation",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/BookingConfirmation.tsx",
+          "frontend/src/pages/BookingPage.tsx",
+          "frontend/src/pages/BookingSuccessPage.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/BookingPage.tsx",
+          "frontend/src/pages/BookingSuccessPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-7",
+        "summary": "Implement user authentication using Internet Identity to manage bookings per user",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/hooks/useAuth.ts",
+          "frontend/src/components/AuthButton.tsx",
+          "frontend/src/components/Layout.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/ProtectedRoute.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/Layout.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Create a user dashboard showing all current and upcoming bookings for the logged-in user",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/BookingCard.tsx",
+          "frontend/src/pages/DashboardPage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/Layout.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/BookingCard.tsx",
+          "frontend/src/pages/DashboardPage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/Layout.tsx"
+        ]
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Add functionality for users to cancel their bookings at least 1 hour before the scheduled time",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/BookingCard.tsx",
+          "frontend/src/hooks/useCancelBooking.ts",
+          "frontend/src/pages/DashboardPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/BookingCard.tsx",
+          "frontend/src/pages/DashboardPage.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "build-request.json",
+    "build-template/Dockerfile",
+    "build-template/LICENSE",
+    "build-template/README.md",
+    "build-template/deploy.sh",
+    "build-template/icp.yaml",
+    "build-template/package.json",
+    "build-template/pnpm-lock.yaml",
+    "build-template/pnpm-workspace.yaml",
+    "build-template/scripts/prune-unused-images.js",
+    "build-template/scripts/resize-images.js",
+    "build-template/src/backend/canister.yaml",
+    "build-template/src/backend/system-idl/aaaaa-aa.did",
+    "build-template/src/frontend/canister.yaml",
+    "build-template/src/frontend/components.json",
+    "build-template/src/frontend/env.json",
+    "build-template/src/frontend/eslint-rules/no-bigint-in-query-keys.js",
+    "build-template/src/frontend/eslint-rules/require-internet-identity-provider.js",
+    "build-template/src/frontend/eslint.config.js",
+    "build-template/src/frontend/package.json",
+    "build-template/src/frontend/postcss.config.js",
+    "build-template/src/frontend/src/components/ui/accordion.tsx",
+    "build-template/src/frontend/src/components/ui/alert-dialog.tsx",
+    "build-template/src/frontend/src/components/ui/alert.tsx",
+    "build-template/src/frontend/src/components/ui/aspect-ratio.tsx",
+    "build-template/src/frontend/src/components/ui/avatar.tsx",
+    "build-template/src/frontend/src/components/ui/badge.tsx",
+    "build-template/src/frontend/src/components/ui/breadcrumb.tsx",
+    "build-template/src/frontend/src/components/ui/button.tsx",
+    "build-template/src/frontend/src/components/ui/calendar.tsx",
+    "build-template/src/frontend/src/components/ui/card.tsx",
+    "build-template/src/frontend/src/components/ui/carousel.tsx",
+    "build-template/src/frontend/src/components/ui/chart.tsx",
+    "build-template/src/frontend/src/components/ui/checkbox.tsx",
+    "build-template/src/frontend/src/components/ui/collapsible.tsx",
+    "build-template/src/frontend/src/components/ui/command.tsx",
+    "build-template/src/frontend/src/components/ui/context-menu.tsx",
+    "build-template/src/frontend/src/components/ui/dialog.tsx",
+    "build-template/src/frontend/src/components/ui/drawer.tsx",
+    "build-template/src/frontend/src/components/ui/dropdown-menu.tsx",
+    "build-template/src/frontend/src/components/ui/form.tsx",
+    "build-template/src/frontend/src/components/ui/hover-card.tsx",
+    "build-template/src/frontend/src/components/ui/input-otp.tsx",
+    "build-template/src/frontend/src/components/ui/input.tsx",
+    "build-template/src/frontend/src/components/ui/label.tsx",
+    "build-template/src/frontend/src/components/ui/menubar.tsx",
+    "build-template/src/frontend/src/components/ui/navigation-menu.tsx",
+    "build-template/src/frontend/src/components/ui/pagination.tsx",
+    "build-template/src/frontend/src/components/ui/popover.tsx",
+    "build-template/src/frontend/src/components/ui/progress.tsx",
+    "build-template/src/frontend/src/components/ui/radio-group.tsx",
+    "build-template/src/frontend/src/components/ui/resizable.tsx",
+    "build-template/src/frontend/src/components/ui/scroll-area.tsx",
+    "build-template/src/frontend/src/components/ui/select.tsx",
+    "build-template/src/frontend/src/components/ui/separator.tsx",
+    "build-template/src/frontend/src/components/ui/sheet.tsx",
+    "build-template/src/frontend/src/components/ui/sidebar.tsx",
+    "build-template/src/frontend/src/components/ui/skeleton.tsx",
+    "build-template/src/frontend/src/components/ui/slider.tsx",
+    "build-template/src/frontend/src/components/ui/sonner.tsx",
+    "build-template/src/frontend/src/components/ui/switch.tsx",
+    "build-template/src/frontend/src/components/ui/table.tsx",
+    "build-template/src/frontend/src/components/ui/tabs.tsx",
+    "build-template/src/frontend/src/components/ui/textarea.tsx",
+    "build-template/src/frontend/src/components/ui/toggle-group.tsx",
+    "build-template/src/frontend/src/components/ui/toggle.tsx",
+    "build-template/src/frontend/src/components/ui/tooltip.tsx",
+    "build-template/src/frontend/src/hooks/use-mobile.tsx",
+    "build-template/src/frontend/src/lib/utils.ts",
+    "build-template/src/frontend/tsconfig.json",
+    "build-template/src/frontend/vite.config.js",
+    "build-template/tsconfig.json",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/public/assets/generated/eco-icon.dim_128x128.png",
+    "frontend/public/assets/generated/ev-station.dim_800x600.png",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/BookingCard.tsx",
+    "frontend/src/components/Layout.tsx",
+    "frontend/src/components/StationCard.tsx",
+    "frontend/src/components/TimeSlotPicker.tsx",
+    "frontend/src/config.ts",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/BookingPage.tsx",
+    "frontend/src/pages/BookingSuccessPage.tsx",
+    "frontend/src/pages/DashboardPage.tsx",
+    "frontend/src/pages/StationsPage.tsx",
+    "frontend/src/ui-summary.json",
+    "frontend/src/utils/StorageClient.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

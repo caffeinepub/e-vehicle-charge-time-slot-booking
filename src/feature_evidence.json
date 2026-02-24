@@ -1,0 +1,144 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-build-a-frontend-interface-to-display-a-list-of-charging-stations-with-their-details-and-real-time-availability",
+      "featureTitle": "Build a frontend interface to display a list of charging stations with their details and real-time availability",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/StationsPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-calendar-or-time-picker-interface-for-users-to-select-their-desired-charging-date-and-time-slot",
+      "featureTitle": "Implement a calendar or time picker interface for users to select their desired charging date and time slot",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/TimeSlotPicker.tsx",
+        "frontend/src/pages/BookingPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-booking-confirmation-flow-where-users-can-review-their-selection-and-complete-the-reservation",
+      "featureTitle": "Create a booking confirmation flow where users can review their selection and complete the reservation",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/BookingPage.tsx",
+        "frontend/src/pages/BookingSuccessPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-user-authentication-using-internet-identity-to-manage-bookings-per-user",
+      "featureTitle": "Implement user authentication using Internet Identity to manage bookings per user",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Layout.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-user-dashboard-showing-all-current-and-upcoming-bookings-for-the-logged-in-user",
+      "featureTitle": "Create a user dashboard showing all current and upcoming bookings for the logged-in user",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/BookingCard.tsx",
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/pages/DashboardPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-functionality-for-users-to-cancel-their-bookings-at-least-1-hour-before-the-scheduled-time",
+      "featureTitle": "Add functionality for users to cancel their bookings at least 1 hour before the scheduled time",
+      "files": [
+        "frontend/src/components/BookingCard.tsx",
+        "frontend/src/pages/DashboardPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-design-a-modern-clean-interface-with-a-cohesive-color-scheme-using-green-and-electric-blue-accents-to-reflect-the-eco-friendly-nature-of-electric-vehicles-with-clear-typography-and-intuitive-layouts-for-browsing-stations-and-booking-slots",
+      "featureTitle": "Design a modern, clean interface with a cohesive color scheme using green and electric blue accents to reflect the eco-friendly nature of electric vehicles, with clear typography and intuitive layouts for browsing stations and booking slots",
+      "files": [
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/index.css",
+        "frontend/src/pages/StationsPage.tsx",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

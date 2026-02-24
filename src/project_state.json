@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "E-vehicle charging time slot booking system",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Electric vehicle charging station illustration with modern design (ev-station.dim_800x600.png)\n- Green energy icon representing eco-friendly charging (eco-icon.dim_128x128.png)",
+  "existing_features": [
+    {
+      "id": "feature-build-a-frontend-interface-to-display-a-list-of-charging-stations-with-their-details-and-real-time-availability",
+      "title": "Build a frontend interface to display a list of charging stations with their details and real-time availability",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-calendar-or-time-picker-interface-for-users-to-select-their-desired-charging-date-and-time-slot",
+      "title": "Implement a calendar or time picker interface for users to select their desired charging date and time slot",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-booking-confirmation-flow-where-users-can-review-their-selection-and-complete-the-reservation",
+      "title": "Create a booking confirmation flow where users can review their selection and complete the reservation",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-user-authentication-using-internet-identity-to-manage-bookings-per-user",
+      "title": "Implement user authentication using Internet Identity to manage bookings per user",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-user-dashboard-showing-all-current-and-upcoming-bookings-for-the-logged-in-user",
+      "title": "Create a user dashboard showing all current and upcoming bookings for the logged-in user",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-functionality-for-users-to-cancel-their-bookings-at-least-1-hour-before-the-scheduled-time",
+      "title": "Add functionality for users to cancel their bookings at least 1 hour before the scheduled time",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-modern-clean-interface-with-a-cohesive-color-scheme-using-green-and-electric-blue-accents-to-reflect-the-eco-friendly-nature-of-electric-vehicles-with-clear-typography-and-intuitive-layouts-for-browsing-stations-and-booking-slots",
+      "title": "Design a modern, clean interface with a cohesive color scheme using green and electric blue accents to reflect the eco-friendly nature of electric vehicles, with clear typography and intuitive layouts for browsing stations and booking slots",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "E-vehicle charging time slot booking functionality",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Create a backend data model for charging stations with properties: station ID, station name, location, number of charging ports, and operating hours",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Implement a time slot booking system where users can reserve charging slots in 30-minute increments",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Create backend functions to check available time slots for a given station and date range",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "E-Vehicle Charge Time Slot Booking",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

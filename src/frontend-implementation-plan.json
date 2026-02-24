@@ -1,0 +1,233 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "EV Charging Station Time Slot Booking System - Frontend",
+  "requirements": [
+    {
+      "id": "REQ-4",
+      "summary": "Display charging stations list with real-time availability",
+      "acceptanceCriteria": [
+        "Charging stations are displayed in a list or grid view",
+        "Each station shows name, location, and number of available ports",
+        "Interface updates to reflect current availability"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/StationList.tsx",
+          "operation": "create",
+          "description": "Create a component to display charging stations in a grid layout showing station name, location, port capacity, and current availability using the shadcn-ui Card component"
+        },
+        {
+          "path": "frontend/src/pages/StationsPage.tsx",
+          "operation": "create",
+          "description": "Create the main stations page that fetches station data from the backend via getAvailableSlots and renders the StationList component with real-time availability updates"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add routing for the StationsPage as the main browsing view in the application router"
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Implement calendar and time picker for slot selection",
+      "acceptanceCriteria": [
+        "Users can select a date from a calendar view",
+        "Available time slots are displayed for the selected date",
+        "Unavailable slots are visually distinguished from available ones",
+        "Users can select a time slot to proceed with booking"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/TimeSlotPicker.tsx",
+          "operation": "create",
+          "description": "Create a time slot picker component that displays available 30-minute slots for a selected date and station, fetching availability via getAvailableSlots backend method, with visual distinction between available and booked slots"
+        },
+        {
+          "path": "frontend/src/components/DatePicker.tsx",
+          "operation": "create",
+          "description": "Create a date picker component using shadcn-ui Calendar component to allow users to select a charging date"
+        },
+        {
+          "path": "frontend/src/pages/BookingPage.tsx",
+          "operation": "create",
+          "description": "Create the booking page that integrates DatePicker and TimeSlotPicker components to allow users to select station, date, and time slot for booking"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add routing for BookingPage with station parameter to enable navigation from station list to booking flow"
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Create booking confirmation flow with review and submission",
+      "acceptanceCriteria": [
+        "Booking summary displays station name, date, time slot, and port number",
+        "Users can confirm or cancel the booking before submission",
+        "Successful bookings show a confirmation message",
+        "Failed bookings display appropriate error messages"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/BookingConfirmation.tsx",
+          "operation": "create",
+          "description": "Create a booking confirmation component that displays booking summary (station, date, time, port) and provides confirm/cancel actions using shadcn-ui Dialog and Button components"
+        },
+        {
+          "path": "frontend/src/pages/BookingPage.tsx",
+          "operation": "modify",
+          "description": "Integrate BookingConfirmation component into the booking flow, handling submission via bookSlot backend method and displaying success/error messages using shadcn-ui Toast"
+        },
+        {
+          "path": "frontend/src/pages/BookingSuccessPage.tsx",
+          "operation": "create",
+          "description": "Create a booking success confirmation page displaying booking details and providing navigation back to dashboard or station list"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add routing for BookingSuccessPage to display after successful booking confirmation"
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Implement Internet Identity authentication for user booking management",
+      "acceptanceCriteria": [
+        "Users can log in using Internet Identity",
+        "Bookings are associated with authenticated user principals",
+        "Users can only view and manage their own bookings"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useAuth.ts",
+          "operation": "create",
+          "description": "Create a custom hook to manage Internet Identity authentication state, login, and logout functionality using the core-infrastructure backend connection"
+        },
+        {
+          "path": "frontend/src/components/AuthButton.tsx",
+          "operation": "create",
+          "description": "Create an authentication button component that displays login/logout actions based on authentication state from useAuth hook, using shadcn-ui Button component"
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create a layout component that includes the AuthButton in the header/navigation area and wraps page content"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap application routes with Layout component to provide consistent authentication UI across all pages"
+        },
+        {
+          "path": "frontend/src/components/ProtectedRoute.tsx",
+          "operation": "create",
+          "description": "Create a protected route wrapper component that checks authentication status and redirects to login if user is not authenticated"
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Create user dashboard showing current and upcoming bookings",
+      "acceptanceCriteria": [
+        "Dashboard displays user's active bookings chronologically",
+        "Each booking shows station name, date, time, and port number",
+        "Users can view booking details"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/BookingCard.tsx",
+          "operation": "create",
+          "description": "Create a booking card component to display individual booking details including station name, date, time, and port number using shadcn-ui Card component"
+        },
+        {
+          "path": "frontend/src/pages/DashboardPage.tsx",
+          "operation": "create",
+          "description": "Create a user dashboard page that fetches bookings via getMyBookings backend method and displays them chronologically using BookingCard components, wrapped with ProtectedRoute for authentication"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add routing for DashboardPage as a protected route accessible only to authenticated users"
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "modify",
+          "description": "Add navigation link to Dashboard in the header navigation menu for authenticated users"
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Add booking cancellation functionality with time restriction",
+      "acceptanceCriteria": [
+        "Users can cancel bookings from their dashboard",
+        "Cancellations are only allowed if more than 1 hour remains before start time",
+        "Cancelled slots become immediately available for other users",
+        "System displays appropriate messages for cancellation attempts within the 1-hour window"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/BookingCard.tsx",
+          "operation": "modify",
+          "description": "Add a cancel button to BookingCard that checks if booking start time is more than 1 hour away, disabling the button with appropriate messaging if within the 1-hour window, using shadcn-ui Button component"
+        },
+        {
+          "path": "frontend/src/hooks/useCancelBooking.ts",
+          "operation": "create",
+          "description": "Create a custom hook to handle booking cancellation logic, including time validation and calling cancelBooking backend method, with error handling and success feedback"
+        },
+        {
+          "path": "frontend/src/pages/DashboardPage.tsx",
+          "operation": "modify",
+          "description": "Integrate useCancelBooking hook into DashboardPage to handle cancellation actions from BookingCard components, refresh booking list after successful cancellation, and display feedback messages using shadcn-ui Toast"
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Design modern eco-friendly interface with green and electric blue theme",
+      "acceptanceCriteria": [
+        "Color scheme consistently uses green and electric blue throughout the application",
+        "Typography is legible and hierarchy is clear",
+        "Layout facilitates easy navigation between station selection, time slot booking, and user dashboard",
+        "Design conveys an eco-friendly, modern aesthetic"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update global styles with green and electric blue color variables in the CSS custom properties, establishing primary (green) and accent (electric blue) colors with appropriate shades for the eco-friendly theme"
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Configure Tailwind theme to extend default colors with green and electric blue palette, setting up eco-friendly color scheme that matches the global CSS variables"
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "modify",
+          "description": "Apply eco-friendly color scheme to Layout component header and navigation using green/electric blue theme colors, ensuring consistent branding across pages"
+        },
+        {
+          "path": "frontend/public/assets/generated/ev-station.dim_800x600.png",
+          "operation": "create",
+          "description": "Wire the generated electric vehicle charging station illustration into the StationsPage as a hero section header image using the workspace file path frontend/public/assets/generated/ev-station.dim_800x600.png"
+        },
+        {
+          "path": "frontend/public/assets/generated/eco-icon.dim_128x128.png",
+          "operation": "create",
+          "description": "Wire the generated green energy eco-friendly icon into the Layout component header/branding area using the workspace file path frontend/public/assets/generated/eco-icon.dim_128x128.png"
+        },
+        {
+          "path": "frontend/src/pages/StationsPage.tsx",
+          "operation": "modify",
+          "description": "Add hero section to StationsPage incorporating the generated ev-station.dim_800x600.png image with eco-friendly styling and clear typography hierarchy"
+        }
+      ]
+    }
+  ]
+}

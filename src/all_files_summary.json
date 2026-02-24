@@ -1,0 +1,23 @@
+{
+  "backend/main.mo": "Motoko actor implementing EV charging station booking system with functions to add stations, query available time slots, book slots, cancel bookings, and retrieve user bookings using Maps and Sets for data storage.",
+  "feature_evidence.json": "JSON report mapping implemented features (station display, time picker, booking flow, authentication, dashboard, cancellation) to their corresponding files, components, and test IDs with confidence levels.",
+  "frontend-file-summaries.txt": "JSON object containing one-line summaries of all frontend TypeScript/React files describing their purpose and functionality in the EV charging booking application.",
+  "frontend/index.css": "Tailwind CSS configuration with custom OKLCH color system defining light and dark mode color tokens for an eco-friendly green and electric blue theme.",
+  "frontend/index.html": "HTML entry point for the E-Vehicle Charge Time Slot Booking application with root div and module script reference to main.tsx.",
+  "frontend/src/App.tsx": "Root application component configuring TanStack Router with routes for stations list, booking flow, user dashboard, and success page, all wrapped in a shared Layout component.",
+  "frontend/src/components/BookingCard.tsx": "React component displaying individual booking details with formatted date/time, port number, station info, and cancellation button with 1-hour restriction enforcement.",
+  "frontend/src/components/Layout.tsx": "Application shell component with header navigation (logo, stations, bookings links), Internet Identity authentication controls, and footer with attribution.",
+  "frontend/src/components/StationCard.tsx": "Displays a charging station card with name, location, ports, hours, and available slots. Includes a button to navigate to the booking page for that station.",
+  "frontend/src/components/TimeSlotPicker.tsx": "Renders a grid of available time slot buttons for a selected date and station. Fetches available slots from the backend and allows users to select a 30-minute charging slot.",
+  "frontend/src/hooks/useActor.ts": "Creates and manages the backend actor instance based on Internet Identity authentication state. Invalidates dependent queries when the actor changes (e.g., on login/logout).",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides Internet Identity authentication context with login, logout, and identity state management. Creates an AuthClient and handles identity persistence across page reloads.",
+  "frontend/src/hooks/useQueries.ts": "Defines React Query hooks for fetching available slots, user bookings, and mutations for booking slots, canceling bookings, and adding stations. All hooks depend on the authenticated actor.",
+  "frontend/src/index.css": "Defines Tailwind CSS configuration with custom OKLCH color variables for light and dark themes, including primary, secondary, accent, and chart colors.",
+  "frontend/src/main.tsx": "Application entry point that sets up React Query and Internet Identity providers, then renders the App component.",
+  "frontend/src/pages/BookingPage.tsx": "Booking page where users select a date and time slot for a specific charging station. Handles authentication checks and submits booking requests, then navigates to success page.",
+  "frontend/src/pages/BookingSuccessPage.tsx": "Confirmation page displayed after successful booking, showing the booking ID and providing navigation to dashboard or home page.",
+  "frontend/src/pages/DashboardPage.tsx": "Dashboard page component that displays user's upcoming and past EV charging bookings, requires Internet Identity authentication, and allows navigation back to stations list.",
+  "frontend/src/pages/StationsPage.tsx": "Main stations listing page that initializes demo charging stations if needed, displays a hero section with EV charging imagery, and shows available charging stations with their details.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration file defining custom color scheme using OKLCH color space, container settings, border radius variables, animations, and plugins for typography and container queries.",
+  "project_state.json": "Project metadata tracking completed features (station display, booking flow, user authentication, dashboard, cancellation) and pending backend requirements (data model, 30-minute slot system, availability checking)."
+}
